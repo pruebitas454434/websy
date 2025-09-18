@@ -3,127 +3,153 @@
 export const services = [
   {
     id: 1,
-    title: "Desarrollo Web",
-    description: "Creamos sitios web y aplicaciones web modernas, responsivas y optimizadas para SEO. Utilizamos las últimas tecnologías como React, Next.js, y Node.js.",
+    title: "Diseño Web",
+    description: "Creamos sitios web profesionales desde landing pages hasta sitios corporativos avanzados con bases de datos y automatizaciones. Cada proyecto incluye diseño responsivo y optimización SEO.",
     icon: "Globe",
-    features: ["Responsive Design", "SEO Optimizado", "Performance Optimizado", "Seguridad Avanzada"]
+    features: [
+      "Landing Page sencilla (2 páginas) con enfoque en conversión",
+      "Sitio web medio (5 páginas) con estructura completa",
+      "Sitio avanzado con base de datos + automatizaciones",
+      "Panel administrativo con bots y sistemas de retención",
+      "Diseño responsivo optimizado para móviles",
+      "Integración con Google Analytics y herramientas SEO"
+    ]
   },
   {
     id: 2,
-    title: "Aplicaciones Móviles",
-    description: "Desarrollamos apps móviles nativas para iOS y Android, así como aplicaciones híbridas usando React Native y Flutter.",
-    icon: "Smartphone",
-    features: ["iOS & Android", "React Native", "Flutter", "UI/UX Moderno"]
+    title: "E-commerce Avanzado",
+    description: "Plataformas de comercio electrónico completas con panel de administración central de hasta 20 módulos. Incluye gestión de productos, inventario, facturación y análisis estadístico detallado.",
+    icon: "ShoppingCart",
+    features: [
+      "Panel básico hasta 5 funciones administrativas",
+      "Panel medio con 10 funciones de gestión",
+      "Panel completo con todas las funciones + IA",
+      "Gestión integral de productos, ventas y facturación",
+      "Control de inventario y stock en tiempo real",
+      "Análisis estadístico con métricas de ventas y márgenes"
+    ]
   },
   {
     id: 3,
-    title: "E-commerce",
-    description: "Plataformas de comercio electrónico completas con pasarelas de pago, gestión de inventario y análisis de ventas.",
-    icon: "ShoppingCart",
-    features: ["Pasarelas de Pago", "Gestión de Inventario", "Analytics", "Multi-moneda"]
+    title: "Sistemas de Gestión",
+    description: "Desarrollamos CRM a medida y sistemas ERP para optimizar la gestión interna de tu empresa. Soluciones personalizadas que integran todas las áreas de negocio.",
+    icon: "Settings",
+    features: [
+      "CRM personalizado para gestión de clientes",
+      "Sistema ERP con módulos comercial y contabilidad",
+      "Integración de recursos humanos y logística",
+      "Módulos de producción y compras",
+      "Automatización de procesos internos",
+      "Reportes y análisis en tiempo real"
+    ]
   },
   {
     id: 4,
-    title: "Sistemas Personalizados",
-    description: "Desarrollamos software a medida para automatizar procesos específicos de tu empresa y mejorar la eficiencia operativa.",
-    icon: "Settings",
-    features: ["CRM Personalizado", "ERP", "APIs", "Integraciones"]
+    title: "SEO y Posicionamiento",
+    description: "Estrategias completas de SEO para posicionar tu negocio en los primeros resultados de Google. Desde optimización básica hasta auditorías avanzadas con plan de crecimiento.",
+    icon: "Lightbulb",
+    features: [
+      "SEO básico: títulos, descripciones y estructura",
+      "Auditoría completa del sitio y competencia",
+      "Investigación avanzada de palabras clave",
+      "Estrategia de contenidos y plan de acción",
+      "Seguimiento y métricas de posicionamiento",
+      "Optimización de velocidad y experiencia de usuario"
+    ]
   },
   {
     id: 5,
-    title: "Consultoría Tech",
-    description: "Asesoramiento en arquitectura de software, migración de sistemas legacy y optimización de procesos tecnológicos.",
-    icon: "Lightbulb",
-    features: ["Arquitectura de Software", "Migración de Sistemas", "Optimización", "Auditorías"]
+    title: "Automatizaciones",
+    description: "Automatizamos WhatsApp y correos electrónicos para optimizar tu atención al cliente. Desde chatbots básicos hasta sistemas avanzados con IA y call center integrado.",
+    icon: "Wrench",
+    features: [
+      "WhatsApp básico con respuestas automatizadas + IA",
+      "Panel medio con flujos y gestión de mensajes",
+      "Plan premium con hasta 10 números de empleados",
+      "Sistema a medida con call center integrado + IA",
+      "Automatización de correos con segmentación",
+      "Soporte mensual y mantenimiento del sistema"
+    ]
   },
   {
     id: 6,
-    title: "Mantenimiento y Soporte",
-    description: "Servicios de mantenimiento, actualizaciones, monitoreo y soporte técnico 24/7 para tus aplicaciones.",
-    icon: "Wrench",
-    features: ["Soporte 24/7", "Actualizaciones", "Monitoreo", "Backup Automático"]
+    title: "E-Learning",
+    description: "Plataformas educativas completas para ofrecer cursos y formación online. Incluye herramientas para estudiantes, docentes y administradores con clases sincrónicas y asincrónicas.",
+    icon: "Lightbulb",
+    features: [
+      "Plataforma de cursos online completa",
+      "Sistema de clases en vivo y grabadas",
+      "Panel para estudiantes, docentes y administradores",
+      "Gestión de evaluaciones y certificaciones",
+      "Seguimiento de progreso del estudiante",
+      "Integración con sistemas de pago"
+    ]
   }
 ];
 
 export const portfolio = [
   {
     id: 1,
-    title: "MercadoLibre Clone",
-    description: "Plataforma de e-commerce completa con sistema de pagos, gestión de productos y análisis de ventas para marketplace argentino.",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    category: "E-commerce",
-    technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-    client: "Retail Solutions SA",
-    year: "2024"
+    title: "M Logística y Distribución SRL",
+    description: "Sitio web corporativo para empresa especializada en transporte premium de litio, hidróxido y carbonato para exportación. Diseño profesional y optimizado para SEO.",
+    image: "/Captura de pantalla 2025-09-13 192823.png",
+    url: "https://mlogistica.grupoemesalta.com.ar/",
+    category: "Sitio Web Corporativo",
+    technologies: ["React", "Next.js", "Tailwind CSS", "SEO"],
+    client: "M Logística y Distribución SRL",
+    year: "2025"
   },
   {
     id: 2,
-    title: "App de Delivery",
-    description: "Aplicación móvil para delivery de comida con tracking en tiempo real, sistema de pagos integrado y panel administrativo.",
-    image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    category: "Aplicación Móvil",
-    technologies: ["React Native", "Firebase", "Google Maps", "Stripe"],
-    client: "Comida Rápida BA",
-    year: "2024"
+    title: "Covenant - Materiales Eléctricos",
+    description: "E-commerce especializado en materiales eléctricos e iluminación profesional. Plataforma completa con catálogo de productos, cotizaciones y envíos a domicilio.",
+    image: "/Captura de pantalla 2025-09-13 194419.png",
+    url: "https://covenant.adhoc.ar/",
+    category: "E-commerce",
+    technologies: ["Odoo", "Python", "PostgreSQL", "E-commerce"],
+    client: "Covenant",
+    year: "2025"
   },
   {
     id: 3,
-    title: "Sistema de Gestión Hospitalaria",
-    description: "Plataforma web para gestión integral de hospitales con historias clínicas digitales, turnos y facturación.",
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    category: "Sistema Personalizado",
-    technologies: ["React", "Python", "PostgreSQL", "AWS"],
-    client: "Hospital San Juan",
-    year: "2023"
+    title: "Regala Algo SRL",
+    description: "E-commerce de productos de alta calidad con panel administrativo completo. Plataforma integral para gestión de inventario, pedidos y análisis de ventas.",
+    image: "/Captura de pantalla 2025-09-13 195135.png",
+    url: "https://regalaalgosrl.com/",
+    category: "E-commerce",
+    technologies: ["React", "Node.js", "MongoDB", "Panel Admin"],
+    client: "Regala Algo SRL",
+    year: "2025"
   },
   {
     id: 4,
-    title: "Plataforma Educativa",
-    description: "LMS completo con clases virtuales, evaluaciones online, seguimiento de progreso y certificaciones digitales.",
-    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    category: "Aplicación Web",
-    technologies: ["Next.js", "Node.js", "MongoDB", "WebRTC"],
-    client: "Universidad Digital",
-    year: "2023"
-  },
-  {
-    id: 5,
-    title: "CRM Inmobiliario",
-    description: "Sistema de gestión de propiedades con tour virtual, lead scoring, automatización de marketing y reportes avanzados.",
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    category: "CRM",
-    technologies: ["Vue.js", "Laravel", "MySQL", "Three.js"],
-    client: "Propiedades Premium",
-    year: "2023"
-  },
-  {
-    id: 6,
-    title: "App Fintech",
-    description: "Aplicación de billetera digital con transferencias, pagos QR, inversiones y análisis de gastos personales.",
-    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    category: "Fintech",
-    technologies: ["Flutter", "Node.js", "PostgreSQL", "Blockchain"],
-    client: "PagoFácil Digital",
-    year: "2024"
+    title: "NUVO Perfumería",
+    description: "Landing page elegante para perfumería de alta calidad con toque personal. Diseño sofisticado enfocado en la experiencia del cliente y personalización de fragancias.",
+    image: "/Captura de pantalla 2025-09-13 195842.png",
+    url: "https://nuvo.website/",
+    category: "Landing Page",
+    technologies: ["React", "CSS3", "JavaScript", "UX Design"],
+    client: "NUVO Perfumería",
+    year: "2025"
   }
 ];
 
 export const team = [
   {
     id: 1,
-    name: "Carlos Rodriguez",
-    position: "CTO & Co-fundador",
-    description: "15 años de experiencia en desarrollo de software. Especialista en arquitectura de sistemas y liderazgo técnico.",
+    name: "Sebastian Aguirre",
+    position: "Ingeniero en Sistemas & Full Stack Developer",
+    description: "Tecnólogo en Análisis y Desarrollo de Software, especializado en IA y automatizaciones. 3 años de experiencia como desarrollador Full Stack.",
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-    skills: ["React", "Node.js", "AWS", "Team Leadership"]
+    skills: ["IA", "Automatizaciones", "Full Stack", "Python", "React"]
   },
   {
     id: 2,
-    name: "María González",
-    position: "Lead Frontend Developer",
-    description: "Experta en desarrollo frontend con pasión por crear interfaces de usuario intuitivas y experiencias excepcionales.",
+    name: "Agustín Dávila",
+    position: "Contador Público Nacional",
+    description: "Especialista en gestión de negocios y análisis financieros. 3 años de experiencia en contabilidad empresarial, gestión presupuestaria y puesta en marcha de negocios.",
     image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-    skills: ["React", "Vue.js", "UI/UX", "TypeScript"]
+    skills: ["Contabilidad", "Análisis Financiero", "Gestión de Negocios", "Presupuestos", "Auditoría"]
   },
   {
     id: 3,
@@ -146,51 +172,62 @@ export const team = [
 export const testimonials = [
   {
     id: 1,
-    name: "Juan Pérez",
-    position: "CEO, Retail Solutions",
-    company: "Retail Solutions SA",
-    text: "TechSolutions transformó completamente nuestro negocio con una plataforma de e-commerce que superó todas nuestras expectativas. El equipo es altamente profesional y entrega resultados excepcionales.",
+    name: "Miguel Fernández",
+    position: "Director General",
+    company: "M Logística y Distribución SRL",
+    text: "Websy creó un sitio web profesional que refleja perfectamente nuestra especialización en transporte de litio. El diseño es elegante y la optimización SEO nos ha traído nuevos clientes.",
     rating: 5,
     image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
   },
   {
     id: 2,
-    name: "Ana Rodríguez",
-    position: "Directora de IT",
-    company: "Hospital San Juan",
-    text: "La implementación del sistema de gestión hospitalaria ha revolucionado nuestros procesos. La atención al detalle y el soporte post-lanzamiento han sido extraordinarios.",
+    name: "Carlos Mendoza",
+    position: "Gerente Comercial",
+    company: "Covenant",
+    text: "La plataforma de e-commerce que desarrolló Websy revolucionó nuestra forma de vender. El sistema Odoo integrado nos permite gestionar inventario, pedidos y clientes de manera eficiente.",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
   },
   {
     id: 3,
-    name: "Roberto Silva",
-    position: "Founder",
-    company: "Comida Rápida BA",
-    text: "Nuestra app de delivery ha sido un éxito rotundo gracias al excelente trabajo de TechSolutions. La app es intuitiva, rápida y nuestros clientes la aman.",
+    name: "Leandro García",
+    position: "Propietario",
+    company: "Regala Algo SRL",
+    text: "El e-commerce y panel administrativo que nos desarrolló Websy superó nuestras expectativas. Podemos gestionar todo nuestro inventario y pedidos de manera muy eficiente desde el panel.",
     rating: 5,
     image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    id: 4,
+    name: "Sofia Martínez",
+    position: "Fundadora",
+    company: "NUVO Perfumería",
+    text: "La landing page que creó Websy captura perfectamente la elegancia y sofisticación de nuestra marca. El diseño es impresionante y ha aumentado considerablemente nuestras consultas.",
+    rating: 5,
+    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
   }
 ];
 
 export const companyInfo = {
-  name: "TechSolutions Argentina",
-  tagline: "Transformamos ideas en soluciones digitales",
-  description: "Somos una agencia de desarrollo de software con sede en Buenos Aires, Argentina. Nos especializamos en crear soluciones digitales innovadoras para empresas que buscan crecer y destacarse en el mercado digital.",
-  experience: "5+ años de experiencia",
-  projects: "50+ proyectos completados",
+  name: "Websy",
+  tagline: "Hacemos páginas Web que no solo se ven bien…funcionan",
+  description: "En Websy ayudamos a emprendedores, profesionales y pymes a tener presencia digital de manera simple, accesible y profesional. Creemos que una página web no es sólo un escaparate, sino una herramienta estratégica para crecer, generar confianza y atraer clientes.",
+  experience: "1+ año de experiencia",
+  projects: "4+ proyectos completados",
   clients: "100% clientes satisfechos",
-  location: "Buenos Aires, Argentina",
-  email: "contacto@techsolutions.com.ar",
-  phone: "+54 11 1234-5678",
-  whatsapp: "+5491112345678",
-  founded: "2019",
-  mission: "Nuestra misión es ayudar a las empresas argentinas a transformarse digitalmente mediante soluciones tecnológicas innovadoras, escalables y de alta calidad.",
-  vision: "Ser la agencia de desarrollo de software líder en Argentina, reconocida por la excelencia técnica y el compromiso con el éxito de nuestros clientes.",
+  location: "Argentina",
+  email: "contacto@websy.com",
+  phone: "+54 9 3884 84-6695",
+  whatsapp: "+5493884846695",
+  instagram: "https://www.instagram.com/websyar?igsh=ams4empjbzA1cWJ1",
+  founded: "2024",
+  mission: "Brindar soluciones digitales ágiles, estéticas y funcionales que impulsen a nuestros clientes a destacarse en internet y alcanzar sus objetivos de negocio. Siempre priorizando sus necesidades y adecuando los diseños a su nicho estratégico.",
+  vision: "Convertirnos en un referente regional en desarrollo web, reconocido por la innovación, la cercanía con nuestros clientes y la calidad de nuestras soluciones.",
   values: [
-    "Innovación constante",
-    "Calidad sin compromisos",
-    "Transparencia total",
-    "Compromiso con resultados"
+    "Innovación constante: buscamos siempre nuevas ideas y tecnologías para mejorar",
+    "Compromiso real: tratamos cada proyecto como si fuera propio",
+    "Transparencia: comunicación clara y directa con nuestros clientes",
+    "Calidad accesible: soluciones profesionales sin costos excesivos",
+    "Crecimiento conjunto: creemos en relaciones a largo plazo, donde ganamos todos"
   ]
 };

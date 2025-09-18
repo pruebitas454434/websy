@@ -82,31 +82,21 @@ export const ServicesSection = () => {
   };
 
   return (
-    <section id="servicios" className="py-12 md:py-16 lg:py-20 xl:py-24 relative overflow-hidden" style={{ backgroundColor: 'var(--bg-page)' }}>
-      {/* Enhanced Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-10 left-10 w-64 h-64 bg-gradient-to-r from-lime-400/10 to-yellow-400/10 rounded-full blur-3xl float"></div>
-        <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-l from-blue-500/8 to-purple-600/8 rounded-full blur-3xl float" style={{ animationDelay: '1.5s' }}></div>
-      </div>
-
-      <div className="container px-4 md:px-6 lg:px-8 relative z-10">
-        {/* Enhanced Header */}
+    <section id="servicios" className="py-12 md:py-16 lg:py-20 xl:py-24" style={{ backgroundColor: 'var(--bg-page)' }}>
+      <div className="container px-4 md:px-6 lg:px-8">
         <div className="text-center mb-12 md:mb-16 lg:mb-20">
-          <div 
-            className="text-sm md:text-base font-semibold mb-3 md:mb-4 uppercase tracking-wider fade-in-down inline-block px-4 py-2 rounded-full border border-lime-400/30 bg-lime-400/10" 
-            style={{ color: 'var(--brand-primary)' }}
-          >
+          <div className="text-sm md:text-base font-semibold mb-3 md:mb-4 uppercase tracking-wider" style={{ color: 'var(--brand-primary)' }}>
             {t('services.title')}
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 md:mb-6 leading-tight fade-in-up" style={{ color: 'var(--text-primary)' }}>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 md:mb-6 leading-tight">
             {t('services.subtitle')}
           </h2>
-          <p className="text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto leading-relaxed fade-in-up" style={{ color: 'var(--text-secondary)', animationDelay: '0.2s' }}>
+          <p className="text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
             {t('services.description')}
           </p>
         </div>
 
-        {/* Enhanced Services Grid */}
+        {/* Responsive services grid - 1 col mobile, 2 cols tablet, 3 cols desktop */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10">
           {servicesData.map((service, index) => {
             const IconComponent = iconMap[service.icon];
@@ -116,9 +106,11 @@ export const ServicesSection = () => {
             return (
               <div 
                 key={service.id} 
-                className="relative overflow-hidden cursor-pointer transition-all duration-500 group hover:scale-105 transform hover:shadow-2xl hover:shadow-lime-500/20 bg-gray-900 border border-gray-700 rounded-2xl p-6 md:p-8 lg:p-10 text-center min-h-[320px] md:min-h-[360px] lg:min-h-[400px] flex flex-col justify-between hover:border-lime-400 scale-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                className="relative overflow-hidden cursor-pointer transition-all duration-500 group hover:scale-105 hover:shadow-2xl bg-gray-900 border border-gray-700 rounded-2xl p-6 md:p-8 lg:p-10 text-center min-h-[320px] md:min-h-[360px] lg:min-h-[400px] flex flex-col justify-between hover:border-yellow-400"
                 onClick={() => handleServiceClick(service)}
+                style={{
+                  animationDelay: `${index * 0.1}s`,
+                }}
               >
                 {/* Gradiente de fondo animado */}
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-purple-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>

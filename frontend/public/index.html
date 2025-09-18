@@ -1,24 +1,75 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#000000" />
-        <meta name="description" content="A product of emergent.sh" />
-        <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-        <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-        <title>Emergent | Fullstack App</title>
+        <meta name="theme-color" content="#d9fb06" />
+        
+        <!-- Enhanced SEO Meta Tags -->
+        <meta name="description" content="Websy - Desarrollo web profesional, e-commerce, sistemas de gestión y automatizaciones. Tu marca al siguiente nivel con sitios web que trabajan por vos." />
+        <meta name="keywords" content="desarrollo web, diseño web, e-commerce, sistemas de gestión, SEO, automatizaciones, landing pages, páginas web profesionales, desarrollo react, Salta Argentina" />
+        <meta name="author" content="Websy - Sebastian Aguirre" />
+        <meta name="robots" content="index, follow" />
+        <meta name="language" content="Spanish" />
+        <meta name="revisit-after" content="7 days" />
+        
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://websy.com.ar/" />
+        <meta property="og:title" content="Websy - Desarrollo Web Profesional | Tu Marca al Siguiente Nivel" />
+        <meta property="og:description" content="Creamos sitios web profesionales, e-commerce y sistemas de gestión que impulsan tu negocio. Desarrollo web en React, SEO optimizado y automatizaciones." />
+        <meta property="og:image" content="%PUBLIC_URL%/websy-logo.png" />
+        <meta property="og:site_name" content="Websy" />
+        <meta property="og:locale" content="es_AR" />
+        
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://websy.com.ar/" />
+        <meta property="twitter:title" content="Websy - Desarrollo Web Profesional | Tu Marca al Siguiente Nivel" />
+        <meta property="twitter:description" content="Creamos sitios web profesionales, e-commerce y sistemas de gestión que impulsan tu negocio. Desarrollo web en React, SEO optimizado y automatizaciones." />
+        <meta property="twitter:image" content="%PUBLIC_URL%/websy-logo.png" />
+        
+        <!-- Structured Data -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Websy",
+          "url": "https://websy.com.ar",
+          "logo": "https://websy.com.ar/websy-logo.png",
+          "description": "Desarrollo web profesional, e-commerce, sistemas de gestión y automatizaciones",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Salta",
+            "addressCountry": "AR"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+54-387-123-4567",
+            "contactType": "customer service"
+          },
+          "sameAs": [
+            "https://www.linkedin.com/company/websy-dev",
+            "https://www.instagram.com/websy.dev"
+          ],
+          "founder": {
+            "@type": "Person",
+            "name": "Sebastian Aguirre",
+            "jobTitle": "Ingeniero en Sistemas & Full Stack Developer"
+          }
+        }
+        </script>
+        
+        <!-- Preconnect to external domains -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://images.unsplash.com">
+        
+        <!-- Performance Optimizations -->
+        <link rel="dns-prefetch" href="//fonts.googleapis.com">
+        <link rel="dns-prefetch" href="//images.unsplash.com">
+        
+        <title>Websy - Desarrollo Web Profesional | Tu Marca al Siguiente Nivel</title>
     </head>
     <body>
         <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -33,53 +84,6 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-        <a
-            id="emergent-badge"
-            target="_blank"
-            href="https://app.emergent.sh/?utm_source=emergent-badge"
-            style="
-                display: flex !important;
-                align-items: center !important;
-                position: fixed !important;
-                bottom: 20px;
-                right: 20px;
-                text-decoration: none;
-                padding: 6px 10px;
-                font-family: -apple-system, BlinkMacSystemFont,
-                    &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell,
-                    &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;,
-                    sans-serif !important;
-                font-size: 12px !important;
-                z-index: 9999 !important;
-                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
-                border-radius: 8px !important;
-                background-color: #ffffff !important;
-                border: 1px solid rgba(255, 255, 255, 0.25) !important;
-            "
-        >
-            <div
-                style="display: flex; flex-direction: row; align-items: center"
-            >
-                <img
-                    style="width: 20px; height: 20px; margin-right: 8px"
-                    src="https://avatars.githubusercontent.com/in/1201222?s=120&u=2686cf91179bbafbc7a71bfbc43004cf9ae1acea&v=4"
-                />
-                <p
-                    style="
-                        color: #000000;
-                        font-family: -apple-system, BlinkMacSystemFont,
-                            &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu,
-                            Cantarell, &quot;Open Sans&quot;,
-                            &quot;Helvetica Neue&quot;, sans-serif !important;
-                        font-size: 12px !important;
-                        align-items: center;
-                        margin-bottom: 0;
-                    "
-                >
-                    Made with Emergent
-                </p>
-            </div>
-        </a>
         <script>
             !(function (t, e) {
                 var o, n, p, r;

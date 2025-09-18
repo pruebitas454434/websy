@@ -2,14 +2,161 @@
 
 :root {
   /* Backgrounds - Exact Pixel Pushers Colors */
-  --bg-page: #1a1c1b;                       /* Main black background */
-  --bg-card: #302f2c;                       /* Dark gray card backgrounds */
+  --bg-page: #182A2C;                       /* Main black background */
+  --bg-card: #231F20;                       /* Dark gray card backgrounds */
   --bg-light: #dfddd6;                      /* Light backgrounds when needed */
-  
+  --bg-subtle: rgba(255, 255, 255, 0.05);  /* Subtle background overlay */
+}
+
+/* Animation System - Enhanced */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(clamp(1rem, 3vw, 1.875rem));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(clamp(-1rem, -3vw, -1.875rem));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(clamp(-1rem, -3vw, -1.875rem));
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(clamp(1rem, 3vw, 1.875rem));
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceIn {
+  from {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+  70% {
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.8);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.fade-in-down {
+  animation: fadeInDown 0.6s ease-out;
+}
+
+.fade-in-left {
+  animation: fadeInLeft 0.6s ease-out;
+}
+
+.fade-in-right {
+  animation: fadeInRight 0.6s ease-out;
+}
+
+.scale-in {
+  animation: scaleIn 0.5s ease-out;
+}
+
+.slide-in-up {
+  animation: slideInUp 0.7s ease-out;
+}
+
+.bounce-in {
+  animation: bounceIn 0.8s ease-out;
+}
+
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.glow {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* CSS Variables - Color Palette */
+:root {
   /* Text - Exact Pixel Pushers Colors */
-  --text-primary: #d9fb06;                  /* Lime green primary text */
-  --text-secondary: #888680;                /* Mid gray supporting text */
-  --text-muted: #302f2c;                    /* Dark gray muted text */
+  --text-primary: #ffffff;                  /* White primary text */
+  --text-secondary: #ffffff;                /* White supporting text */
+  --text-muted: #ffffff;                    /* White muted text */
   --text-inverse: #1a1c1b;                  /* Black text on light backgrounds */
   
   /* Borders - Exact Pixel Pushers Colors */
@@ -43,13 +190,14 @@ body {
   color: var(--text-primary);
   margin: 0;
   padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
-/* Typography Scale - Pixel Pushers Sizing */
+/* Typography Scale - Responsive Typography */
 .brand-display { 
   font-family: 'Inter', Arial, sans-serif; 
   font-weight: 900; 
-  font-size: clamp(3rem, 5.2571rem + 3.0476vw, 6rem); 
+  font-size: clamp(2rem, 4vw + 1rem, 6rem); 
   line-height: 0.9; 
   color: var(--text-primary);
   text-transform: uppercase;
@@ -59,8 +207,8 @@ body {
 .heading-1 { 
   font-family: 'Inter', Arial, sans-serif; 
   font-weight: 800; 
-  font-size: clamp(2.5rem, 4rem + 2vw, 4.5rem); 
-  line-height: 0.9; 
+  font-size: clamp(1.75rem, 3vw + 1rem, 4.5rem); 
+  line-height: 0.95; 
   text-transform: uppercase; 
   color: var(--text-primary);
 }
@@ -68,7 +216,7 @@ body {
 .heading-2 { 
   font-family: 'Inter', Arial, sans-serif; 
   font-weight: 700; 
-  font-size: clamp(2rem, 3rem + 1vw, 3.5rem); 
+  font-size: clamp(1.5rem, 2.5vw + 0.5rem, 3.5rem); 
   line-height: 1.1; 
   text-transform: uppercase; 
   color: var(--text-primary);
@@ -77,7 +225,7 @@ body {
 .heading-3 { 
   font-family: 'Inter', Arial, sans-serif; 
   font-weight: 600; 
-  font-size: clamp(1.5rem, 2rem + 0.5vw, 2.5rem); 
+  font-size: clamp(1.25rem, 2vw + 0.25rem, 2.5rem); 
   line-height: 1.2; 
   color: var(--text-primary);
 }
@@ -85,7 +233,7 @@ body {
 .body-large { 
   font-family: 'Inter', Arial, sans-serif; 
   font-weight: 500; 
-  font-size: 1.5rem; 
+  font-size: clamp(1.125rem, 1.5vw + 0.5rem, 1.5rem); 
   line-height: 1.4; 
   color: var(--text-primary); 
 }
@@ -93,7 +241,7 @@ body {
 .body-medium { 
   font-family: 'Inter', Arial, sans-serif; 
   font-weight: 500; 
-  font-size: 1.25rem; 
+  font-size: clamp(1rem, 1.25vw + 0.25rem, 1.25rem); 
   line-height: 1.4; 
   color: var(--text-primary); 
 }
@@ -101,7 +249,7 @@ body {
 .body-small { 
   font-family: 'Inter', Arial, sans-serif; 
   font-weight: 400; 
-  font-size: 1rem; 
+  font-size: clamp(0.875rem, 1vw + 0.25rem, 1rem); 
   line-height: 1.5; 
   color: var(--text-secondary); 
 }
@@ -109,26 +257,26 @@ body {
 .caption { 
   font-family: 'Inter', Arial, sans-serif; 
   font-weight: 500; 
-  font-size: 0.9rem; 
+  font-size: clamp(0.75rem, 1vw, 0.9rem); 
   line-height: 1.3; 
   color: var(--text-secondary); 
   text-transform: uppercase; 
   letter-spacing: 0.1em; 
 }
 
-/* Button Styles */
+/* Button Styles - Responsive */
 .btn-primary {
   background: var(--brand-primary);
   color: var(--text-inverse);
   border: none;
   border-radius: 10rem;
-  padding: 1em 1.5em;
+  padding: clamp(0.75rem, 2vw, 1rem) clamp(1.25rem, 3vw, 1.5rem);
   font-family: 'Inter', Arial, sans-serif;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: clamp(0.875rem, 2vw, 1rem);
   cursor: pointer;
   transition: all 0.3s ease;
-  min-height: 48px;
+  min-height: clamp(44px, 10vw, 48px);
   text-decoration: none;
   display: inline-flex;
   align-items: center;
@@ -152,13 +300,13 @@ body {
   color: var(--brand-primary);
   border: 1px solid var(--brand-primary);
   border-radius: 10rem;
-  padding: 1em 1.5em;
+  padding: clamp(0.75rem, 2vw, 1rem) clamp(1.25rem, 3vw, 1.5rem);
   font-family: 'Inter', Arial, sans-serif;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: clamp(0.875rem, 2vw, 1rem);
   cursor: pointer;
   transition: all 0.3s ease;
-  min-height: 48px;
+  min-height: clamp(44px, 10vw, 48px);
   text-decoration: none;
   display: inline-flex;
   align-items: center;
@@ -178,14 +326,14 @@ body {
   transform: scale(0.98);
 }
 
-/* Navigation Links */
+/* Navigation Links - Responsive */
 .nav-link {
   color: var(--text-primary);
   text-decoration: none;
   font-family: 'Inter', Arial, sans-serif;
-  font-size: 1rem;
+  font-size: clamp(0.875rem, 2vw, 1rem);
   font-weight: 500;
-  padding: 1em 1.5em;
+  padding: clamp(0.5rem, 2vw, 1rem) clamp(0.75rem, 3vw, 1.5rem);
   transition: all 0.3s ease;
   position: relative;
 }
@@ -198,11 +346,12 @@ body {
   color: var(--brand-active);
 }
 
-/* Layout System */
+/* Layout System - Responsive */
 .container {
   max-width: 87.5rem;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 clamp(1rem, 4vw, 2.5rem);
+  width: 100%;
 }
 
 .hero-section {
@@ -211,90 +360,90 @@ body {
   display: flex;
   align-items: center;
   position: relative;
-  padding: 120px 0px 80px;
+  padding: clamp(4rem, 10vw, 7.5rem) 0 clamp(3rem, 8vw, 5rem);
   overflow: hidden;
 }
 
-/* Cards */
+/* Cards - Responsive */
 .service-card {
   background: var(--bg-card);
   border: 1px solid var(--border-medium);
-  border-radius: 20px;
-  padding: 40px;
+  border-radius: clamp(1rem, 3vw, 1.25rem);
+  padding: clamp(1.5rem, 4vw, 2.5rem);
   transition: all 0.3s ease;
   height: 100%;
 }
 
 .service-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(clamp(-3px, -1vw, -5px));
   border-color: var(--brand-primary);
-  box-shadow: 0 20px 40px rgba(217, 251, 6, 0.1);
+  box-shadow: 0 clamp(10px, 3vw, 20px) clamp(20px, 5vw, 40px) rgba(217, 251, 6, 0.1);
 }
 
 .portfolio-card {
   background: var(--bg-card);
   border: 1px solid var(--border-medium);
-  border-radius: 20px;
+  border-radius: clamp(1rem, 3vw, 1.25rem);
   overflow: hidden;
   transition: all 0.3s ease;
   height: 100%;
 }
 
 .portfolio-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(clamp(-3px, -1vw, -5px));
   border-color: var(--brand-primary);
-  box-shadow: 0 20px 40px rgba(217, 251, 6, 0.1);
+  box-shadow: 0 clamp(10px, 3vw, 20px) clamp(20px, 5vw, 40px) rgba(217, 251, 6, 0.1);
 }
 
-/* Spacing System */
-.space-20 { margin: 20px; }
-.space-40 { margin: 40px; }
-.space-80 { margin: 80px 0; }
-.space-120 { margin: 120px 0; }
+/* Spacing System - Responsive */
+.space-20 { margin: clamp(0.75rem, 2vw, 1.25rem); }
+.space-40 { margin: clamp(1.5rem, 4vw, 2.5rem); }
+.space-80 { margin: clamp(3rem, 8vw, 5rem) 0; }
+.space-120 { margin: clamp(4rem, 10vw, 7.5rem) 0; }
 
-.pad-20 { padding: 20px; }
-.pad-40 { padding: 40px; }
-.pad-80 { padding: 80px 0; }
-.pad-120 { padding: 120px 0; }
+.pad-20 { padding: clamp(0.75rem, 2vw, 1.25rem); }
+.pad-40 { padding: clamp(1.5rem, 4vw, 2.5rem); }
+.pad-80 { padding: clamp(3rem, 8vw, 5rem) 0; }
+.pad-120 { padding: clamp(4rem, 10vw, 7.5rem) 0; }
 
-/* WhatsApp Button */
+/* WhatsApp Button - Responsive */
 .whatsapp-button {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
+  bottom: clamp(1rem, 4vw, 1.875rem);
+  right: clamp(1rem, 4vw, 1.875rem);
   background: #25D366;
   color: white;
   border-radius: 50%;
-  width: 60px;
-  height: 60px;
+  width: clamp(3rem, 8vw, 3.75rem);
+  height: clamp(3rem, 8vw, 3.75rem);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: clamp(1.125rem, 3vw, 1.5rem);
   text-decoration: none;
-  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+  box-shadow: 0 0.5rem 1.25rem rgba(37, 211, 102, 0.3);
   transition: all 0.3s ease;
   z-index: 1000;
 }
 
 .whatsapp-button:hover {
   transform: scale(1.1);
-  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.4);
+  box-shadow: 0 0.75rem 1.875rem rgba(37, 211, 102, 0.4);
 }
 
-/* Form Styles */
+/* Form Styles - Responsive */
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: clamp(1rem, 3vw, 1.25rem);
 }
 
 .form-input {
   width: 100%;
-  padding: 15px 20px;
+  padding: clamp(0.75rem, 2.5vw, 0.9375rem) clamp(1rem, 3vw, 1.25rem);
   background: var(--bg-card);
   border: 1px solid var(--border-medium);
-  border-radius: 10px;
+  border-radius: clamp(0.5rem, 2vw, 0.625rem);
   color: var(--text-primary);
-  font-size: 1rem;
+  font-size: clamp(0.875rem, 2vw, 1rem);
   transition: all 0.3s ease;
 }
 
@@ -308,39 +457,80 @@ body {
   color: var(--text-secondary);
 }
 
-/* Responsive Design */
-@media (max-width: 767px) {
+/* Enhanced Mobile Responsiveness */
+@media (max-width: 480px) {
   .container {
-    padding: 0 20px;
+    padding: 0 1rem;
   }
   
   .hero-section {
-    padding: 80px 0 60px;
-    min-height: 80vh;
+    padding: 3rem 0 2rem;
+    min-height: 85vh;
   }
   
   .btn-primary,
   .btn-secondary {
     width: 100%;
-    min-height: 52px;
+    min-height: 48px;
+    font-size: 0.9rem;
   }
   
   .brand-display {
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-size: 2.5rem;
+    line-height: 0.9;
   }
   
   .whatsapp-button {
-    bottom: 20px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
-    font-size: 1.2rem;
+    width: 3rem;
+    height: 3rem;
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 1.1rem;
+  }
+
+  .service-card,
+  .portfolio-card {
+    padding: 1.25rem;
+    border-radius: 0.875rem;
   }
 }
 
-@media (min-width: 768px) and (max-width: 1199px) {
+@media (min-width: 481px) and (max-width: 767px) {
+  .hero-section {
+    padding: 4rem 0 3rem;
+    min-height: 90vh;
+  }
+  
+  .brand-display {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
   .container {
-    padding: 0 30px;
+    padding: 0 1.5rem;
+  }
+  
+  .hero-section {
+    padding: 5rem 0 4rem;
+  }
+  
+  .brand-display {
+    font-size: 4rem;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .container {
+    padding: 0 2rem;
+  }
+  
+  .hero-section {
+    padding: 6rem 0 4.5rem;
+  }
+  
+  .brand-display {
+    font-size: 5rem;
   }
 }
 
@@ -349,13 +539,41 @@ body {
   .portfolio-card:hover {
     transform: translateY(-8px);
   }
+  
+  .hero-section {
+    padding: 7.5rem 0 5rem;
+  }
+  
+  .brand-display {
+    font-size: 6rem;
+  }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) {
+  .service-card:hover,
+  .portfolio-card:hover,
+  .btn-primary:hover,
+  .btn-secondary:hover {
+    transform: none;
+  }
+  
+  .service-card:active,
+  .portfolio-card:active {
+    transform: scale(0.98);
+  }
+  
+  .btn-primary:active,
+  .btn-secondary:active {
+    transform: scale(0.95);
+  }
 }
 
 /* Animations */
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(clamp(1rem, 3vw, 1.875rem));
   }
   to {
     opacity: 1;
@@ -367,17 +585,152 @@ body {
   animation: fadeInUp 0.6s ease-out;
 }
 
-/* Grid Layouts */
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* Grid Layouts - Responsive */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  padding: 40px 0;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  gap: clamp(1.25rem, 4vw, 1.875rem);
+  padding: clamp(1.5rem, 4vw, 2.5rem) 0;
 }
 
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 30px;
-  padding: 40px 0;
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  gap: clamp(1.25rem, 4vw, 1.875rem);
+  padding: clamp(1.5rem, 4vw, 2.5rem) 0;
+}
+
+/* Utility Classes */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Progress Animation */
+@keyframes progress {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-progress {
+  animation: progress 2s infinite;
+}
+
+/* Shimmer Animation for Loading States */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer {
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.bg-size-200 {
+  background-size: 200% 100%;
+}
+
+.bg-pos-0 {
+  background-position: 0% 0;
+}
+
+/* Scroll to Top Button */
+.scroll-to-top {
+  position: fixed;
+  bottom: 120px;
+  right: 24px;
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, var(--brand-primary) 0%, #f8d47a 100%);
+  color: var(--text-inverse);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(217, 251, 6, 0.3);
+}
+
+.scroll-to-top:hover {
+  transform: translateY(-2px) scale(1.1);
+  box-shadow: 0 8px 30px rgba(217, 251, 6, 0.4);
+}
+
+.scroll-to-top.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+}
+
+/* Enhanced Responsive Design */
+@media (max-width: 768px) {
+  .service-card, .portfolio-card, .testimonial-card {
+    margin-bottom: 1rem;
+  }
+  
+  .nav-link {
+    padding: 0.75rem 1rem;
+    font-size: 1.1rem;
+  }
+  
+  .btn-primary, .btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .whatsapp-button,
+  .scroll-to-top,
+  .nav-mobile {
+    display: none !important;
+  }
+  
+  .hero-section {
+    min-height: auto;
+    padding: 2rem 0;
+  }
+  
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+    color: black !important;
+    background: white !important;
+  }
+}
+
+/* High DPI Display Optimization */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+  .service-card,
+  .portfolio-card {
+    border-width: 0.5px;
+  }
 }
