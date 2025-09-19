@@ -1,0 +1,43 @@
+{
+  "name": "websy-pwa",
+  "short_name": "Websy",
+  "description": "Agencia de Desarrollo Web Profesional",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#182A2C",
+  "theme_color": "#d9fb06",
+  "orientation": "portrait-primary",
+  "categories": ["business", "productivity", "utilities"],
+  "lang": "es",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "/websy-logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/websy-logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Contactar",
+      "short_name": "Contacto",
+      "description": "Ir directamente al formulario de contacto",
+      "url": "/#contacto",
+      "icons": [{ "src": "/websy-logo.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Servicios",
+      "short_name": "Servicios",
+      "description": "Ver nuestros servicios",
+      "url": "/#servicios",
+      "icons": [{ "src": "/websy-logo.png", "sizes": "96x96" }]
+    }
+  ]
+}

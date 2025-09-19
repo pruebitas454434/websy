@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Send, MapPin, Phone, Mail } from 'lucide-react';
 import { companyInfo } from '../mockData';
 import { useLanguage } from '../LanguageContext';
-import { saveCotizacion } from '../firebase';
+import { saveCotizacion, sendCotizacionEmail } from '../firebase';
 
 export const ContactSection = () => {
   const { t } = useLanguage();
@@ -43,6 +43,22 @@ export const ContactSection = () => {
         budget: formData.budget || null,
         message: formData.message
       });
+
+      // Attempt to trigger a backend email (cloud function). This is non-blocking for UX;
+      // if it fails we'll log but still show the thank-you message that the request was received.
+      try {
+        await sendCotizacionEmail({
+          cotizacionId: docId,
+          name: formData.name,
+          email: formData.email,
+          company: formData.company || null,
+          projectType: formData.projectType,
+          budget: formData.budget || null,
+          message: formData.message
+        });
+      } catch (fnErr) {
+        console.error('Failed to call sendCotizacionEmail function:', fnErr);
+      }
 
       // Simple success UX
       alert(t('contact.thankYouMessage'));

@@ -69,8 +69,21 @@
         <link rel="dns-prefetch" href="//fonts.googleapis.com">
         <link rel="dns-prefetch" href="//images.unsplash.com">
         
-        <title>Websy - Desarrollo Web Profesional | Tu Marca al Siguiente Nivel</title>
-    </head>
+        <!-- PWA Manifest -->
+        <link rel="manifest" href="/manifest.json" />
+        
+        <!-- Apple Touch Icons -->
+        <link rel="apple-touch-icon" href="/websy-logo.png" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-title" content="Websy" />
+        
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="/websy-logo.png" />
+        <link rel="shortcut icon" href="/websy-logo.png" />
+        
+        <!-- Canonical URL -->
+        <link rel="canonical" href="https://websy.com.ar/" />
     <body>
         <noscript>You need to enable JavaScript to run this app.</noscript>
         <div id="root"></div>
@@ -150,6 +163,81 @@
                 api_host: "https://us.i.posthog.com",
                 person_profiles: "identified_only", // or 'always' to create profiles for anonymous users as well
             });
+        </script>
+        
+        <!-- Service Worker Registration -->
+        <script>
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', function() {
+                    navigator.serviceWorker.register('/sw.js')
+                        .then(function(registration) {
+                            console.log('Service Worker registered successfully:', registration.scope);
+                            
+                            // Handle updates
+                            registration.addEventListener('updatefound', function() {
+                                const newWorker = registration.installing;
+                                newWorker.addEventListener('statechange', function() {
+                                    if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                        // New content is available, show update prompt
+                                        if (confirm('Nueva versión disponible. ¿Quieres actualizar?')) {
+                                            newWorker.postMessage({ action: 'skipWaiting' });
+                                            window.location.reload();
+                                        }
+                                    }
+                                });
+                            });
+                        })
+                        .catch(function(error) {
+                            console.log('Service Worker registration failed:', error);
+                        });
+                });
+                
+                // Listen for service worker updates
+                navigator.serviceWorker.addEventListener('controllerchange', function() {
+                    window.location.reload();
+                });
+            }
+        </script>
+        
+        <!-- Performance Monitoring -->
+        <script>
+            // Web Vitals monitoring
+            function reportWebVitals(metric) {
+                console.log('Web Vital:', metric);
+                // Send to analytics service
+                if (window.gtag) {
+                    window.gtag('event', metric.name, {
+                        value: Math.round(metric.value * 1000) / 1000,
+                        event_category: 'Web Vitals',
+                        event_label: metric.id,
+                        non_interaction: true,
+                    });
+                }
+            }
+            
+            // Report LCP
+            new PerformanceObserver((list) => {
+                for (const entry of list.getEntries()) {
+                    if (entry.entryType === 'largest-contentful-paint') {
+                        reportWebVitals({
+                            name: 'LCP',
+                            value: entry.startTime,
+                            id: 'v3-' + Date.now()
+                        });
+                    }
+                }
+            }).observe({ entryTypes: ['largest-contentful-paint'] });
+            
+            // Report FID
+            new PerformanceObserver((list) => {
+                for (const entry of list.getEntries()) {
+                    reportWebVitals({
+                        name: 'FID',
+                        value: entry.processingStart - entry.startTime,
+                        id: 'v3-' + Date.now()
+                    });
+                }
+            }).observe({ entryTypes: ['first-input'] });
         </script>
     </body>
 </html>

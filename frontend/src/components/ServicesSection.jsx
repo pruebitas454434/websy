@@ -191,11 +191,18 @@ export const ServicesSection = () => {
 
       {/* Modal para detalles del servicio - Responsive */}
       <Dialog open={isModalOpen} onOpenChange={handleCloseModal}>
-        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto p-4 md:p-6 lg:p-8">
+        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto p-4 md:p-6 lg:p-8 border-2 shadow-2xl"
+          style={{ 
+            backgroundColor: 'var(--bg-card)', 
+            color: 'var(--text-primary)', 
+            borderColor: 'var(--border-medium)',
+            boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.8)'
+          }}
+        >
           {selectedService && (
             <div className="space-y-4 md:space-y-6">
               <DialogHeader>
-                <DialogTitle className="text-xl md:text-2xl lg:text-3xl font-bold flex items-center">
+                <DialogTitle className="text-xl md:text-2xl lg:text-3xl font-bold flex items-center mb-4" style={{ color: 'var(--text-primary)' }}>
                   <div 
                     className="w-10 h-10 md:w-12 md:h-12 rounded-2xl flex items-center justify-center mr-3 md:mr-4"
                     style={{ 
@@ -211,13 +218,13 @@ export const ServicesSection = () => {
                   {t(`${selectedService.translationKey}.title`)}
                 </DialogTitle>
                 
-                <DialogDescription className="text-base md:text-lg lg:text-xl leading-relaxed">
+                <DialogDescription className="text-base md:text-lg lg:text-xl leading-relaxed mb-6" style={{ color: 'var(--text-secondary)' }}>
                   {t(`${selectedService.translationKey}.fullDescription`)}
                 </DialogDescription>
               </DialogHeader>
 
               {/* Características responsive */}
-              <div>
+              <div className="mb-6">
                 <h4 className="font-semibold text-lg md:text-xl mb-4 flex items-center" style={{ color: 'var(--brand-primary)' }}>
                   <CheckCircle size={20} className="mr-2" />
                   {t('services.mainFeatures')}
@@ -226,8 +233,12 @@ export const ServicesSection = () => {
                   {t(`${selectedService.translationKey}.features`).map((feature, index) => (
                     <div 
                       key={index} 
-                      className="flex items-start space-x-3 p-3 md:p-4 rounded-lg"
-                      style={{ backgroundColor: 'rgba(217, 251, 6, 0.05)' }}
+                      className="flex items-start space-x-3 p-3 md:p-4 rounded-lg border"
+                      style={{ 
+                        backgroundColor: 'var(--bg-page)', 
+                        borderColor: 'var(--border-light)',
+                        color: 'var(--text-secondary)'
+                      }}
                     >
                       <div 
                         className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
@@ -235,7 +246,7 @@ export const ServicesSection = () => {
                       >
                         <CheckCircle size={14} style={{ color: 'var(--text-inverse)' }} />
                       </div>
-                      <span className="text-sm md:text-base leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                      <span className="text-sm md:text-base leading-relaxed">
                         {feature}
                       </span>
                     </div>
@@ -244,12 +255,12 @@ export const ServicesSection = () => {
               </div>
 
               {/* Botones de Contacto responsive */}
-              <div className="border-t pt-4 md:pt-6" style={{ borderColor: 'var(--border-light)' }}>
+              <div className="border-t-2 pt-6" style={{ borderColor: 'var(--border-medium)' }}>
                 <div className="flex flex-col sm:flex-row gap-3 justify-center">
                   <Button 
                     onClick={handleContactClick}
-                    style={{ backgroundColor: 'var(--brand-primary)' }}
-                    className="flex items-center text-sm md:text-base px-4 md:px-6 py-2 md:py-3"
+                    style={{ backgroundColor: 'var(--brand-primary)', color: 'var(--text-inverse)' }}
+                    className="flex items-center text-sm md:text-base px-4 md:px-6 py-2 md:py-3 font-semibold hover:opacity-90 transition-opacity"
                   >
                     <ExternalLink size={16} className="mr-2" />
                     {t('services.cta')}
@@ -257,7 +268,12 @@ export const ServicesSection = () => {
                   <Button 
                     variant="outline" 
                     onClick={() => window.open('https://wa.me/5493884846695', '_blank')}
-                    className="flex items-center text-sm md:text-base px-4 md:px-6 py-2 md:py-3"
+                    className="flex items-center text-sm md:text-base px-4 md:px-6 py-2 md:py-3 border-2 font-semibold"
+                    style={{ 
+                      borderColor: 'var(--brand-primary)', 
+                      color: 'var(--brand-primary)',
+                      backgroundColor: 'transparent'
+                    }}
                   >
                     <MessageSquare size={16} className="mr-2" />
                     WhatsApp

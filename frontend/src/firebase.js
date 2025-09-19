@@ -2,6 +2,7 @@
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { onSnapshot, query, orderBy } from 'firebase/firestore';
+import { getFunctions, httpsCallable } from 'firebase/functions';
 
 // Firebase config (provided by user)
 const firebaseConfig = {
@@ -17,6 +18,19 @@ const firebaseConfig = {
 // Initialize Firebase app and Firestore
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+// Initialize Functions (for callable cloud functions)
+const functions = getFunctions(app);
+
+/**
+ * Call a callable Cloud Function named 'sendCotizacionEmail'.
+ * Expects an object with cotizacion data and returns the function result.
+ */
+export async function sendCotizacionEmail(payload) {
+  if (!payload || typeof payload !== 'object') throw new Error('Invalid payload for sendCotizacionEmail');
+  const sendFn = httpsCallable(functions, 'sendCotizacionEmail');
+  const res = await sendFn(payload);
+  return res.data;
+}
 
 /**
  * Save a cotizacion document to the 'cotizaciones' collection.
